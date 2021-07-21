@@ -20,3 +20,16 @@ function confirmaLogin() {
 }
 
 buttonLogin.addEventListener('click', confirmaLogin);
+
+const buttonForm = document.querySelector('#submit-btn');
+const checkagreement = document.querySelector('#agreement');
+
+function ativarButton () {
+  if (checkagreement.checked === true) {
+    buttonForm.disabled = false;
+  } else {
+    buttonForm.disabled = true
+  }
+}
+
+checkagreement.addEventListener('click', ativarButton);
