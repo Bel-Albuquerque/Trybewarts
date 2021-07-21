@@ -36,3 +36,7 @@ main {
   display: flex;
   flex-direction: column;
 }
+
+#input-radio-buttons {
+  display: flex;
+}

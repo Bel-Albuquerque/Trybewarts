@@ -28,34 +28,62 @@
       <input type="text" name="sobrenome" placeholder="Sobrenome" id="input-lastname">
      </div>
      <div>
-       <input type="email" name="email" placeholder="Email" id="input-email">
-
-       <select name="house" id="house">
-       <option disabled selected value>Selecione sua casa</option>
-       <option value="Gitnória" id="gitnoria-house">Gitnória</option>
-       <option value="Reactpuff" id="reactpuff-house">Reactpuff</option>
-       <option value="Corvinode" id="corvinode-house">Corvinode</option>
-       <option value="Pytherina" id="pytherina-house">Pytherina</option>
-      </select>
+      <div>
+        <input type="email" name="email" placeholder="Email" id="input-email">
+ 
+        <select name="house" id="house">
+        <option disabled selected value>Selecione sua casa</option>
+        <option value="Gitnória" id="gitnoria-house">Gitnória</option>
+        <option value="Reactpuff" id="reactpuff-house">Reactpuff</option>
+        <option value="Corvinode" id="corvinode-house">Corvinode</option>
+        <option value="Pytherina" id="pytherina-house">Pytherina</option>
+       </select>
+      </div>
+     
      </div>
-     <div id='radioFamily'>
-      <label for="family" id="label-family">Qual sua família?</label>
-      
-      <div>
-        <input type="radio" name="family" value="Frontend" id="Frontend">
-        <label for="Frontend">Frontend</label>
-      </div>
-      <div>
-        <input type="radio" name="family" value="Backend" id="Backend">
-        <label for="Backend">Backend</label>
-      </div>
-      <div>
-        <input type="radio" name="family" value="FullStack" id="FullStack">
-        <label for="FullStack">FullStack</label>
-      </div>
-      
-    </div>
 
+     <div id="input-radio-buttons">
+
+      <div id='radioFamily'>
+        <label for="family" id="label-family">Qual sua família?</label>
+        
+        <div>
+          <input type="radio" name="family" value="Frontend" id="Frontend">
+          <label for="Frontend">Frontend</label>
+        </div>
+        <div>
+          <input type="radio" name="family" value="Backend" id="Backend">
+          <label for="Backend">Backend</label>
+        </div>
+        <div>
+          <input type="radio" name="family" value="FullStack" id="FullStack">
+          <label for="FullStack">FullStack</label>
+        </div>
+        
+      </div>
+      <div>
+        <label for="subject" id="label-content">Qual conteúdo você está com mais vontade de aprender?</label>
+        <div>
+          <div id='col1'>
+            <input class="subject" type="checkbox" name="subject" value="HoFs" id="HoFs">
+            <label for="HoFs">HoFs</label>
+            <input class="subject" type="checkbox" name="subject" value="Jest" id="Jest">
+            <label for="Jest">Jest</label>
+            <input class="subject" type="checkbox" name="subject" value="Promises" id="Promises">
+            <label for="Promises">Promises</label>
+          </div>
+          <div id="col2">
+            <input class="subject" type="checkbox" name="subject" value="React" id="React">
+            <label for="React">React</label>
+            <input class="subject" type="checkbox" name="subject" value="SQL" id="SQL">
+            <label for="SQL">SQL</label>
+            <input class="subject" type="checkbox" name="subject" value="Python" id="Python">
+            <label for="Python">Python</label>
+          </div>
+        </div>
+      </div>
+       
+     </div>
     </form>
 
     <img src="images/trybewarts-colored.svg" alt="Logo colorido" id='trybewarts-forms-logo'>
