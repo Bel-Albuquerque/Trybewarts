@@ -34,15 +34,14 @@ function ativarButton() {
 
 checkagreement.addEventListener('click', ativarButton);
 
-let textarea = document.querySelector('textarea');
+const textarea = document.querySelector('textarea');
 
 function contador() {
-  let textarea = document.querySelector('textarea');
-  let tamanhoTexto = textarea.value.length;
-  let inputLength = textarea.maxLength;
-  let contador = document.querySelector('#counter');
+  const tamanhoTexto = textarea.value.length;
+  const inputLength = textarea.maxLength;
+  const contador2 = document.querySelector('#counter');
 
-  contador.innerHTML = inputLength - tamanhoTexto;
+  contador2.innerHTML = inputLength - tamanhoTexto;
 }
 
 textarea.addEventListener('input', contador);
