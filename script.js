@@ -33,3 +33,16 @@ function ativarButton() {
 }
 
 checkagreement.addEventListener('click', ativarButton);
+
+let textarea = document.querySelector('textarea');
+
+function contador() {
+  let textarea = document.querySelector('textarea');
+  let tamanhoTexto = textarea.value.length;
+  let inputLength = textarea.maxLength;
+  let contador = document.querySelector('#counter');
+
+  contador.innerHTML = inputLength - tamanhoTexto;
+}
+
+textarea.addEventListener('input', contador);
