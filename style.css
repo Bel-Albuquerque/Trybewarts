@@ -31,3 +31,8 @@ main {
   height: 500px;
   align-self: flex-end;
 }
+
+#radioFamily {
+  display: flex;
+  flex-direction: column;
+}
