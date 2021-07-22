@@ -27,10 +27,9 @@ const checkagreement = document.querySelector('#agreement');
 buttonForm.addEventListener('click', preventDef);
 
 function ativarButton() {
+  buttonForm.disabled = true;
   if (checkagreement.checked === true) {
     buttonForm.disabled = false;
-  } else {
-    buttonForm.disabled = true;
   }
 }
 
