@@ -52,7 +52,7 @@ const subjectArray = [];
 
 function subjectChecked() {
   const subject = document.querySelectorAll('input[name="subject"]');
-  for (const index of subject) {
+  for (index of subject) {
     if (index.checked === true) {
       subjectArray.push(index.value);
     }
