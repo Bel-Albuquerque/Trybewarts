@@ -66,14 +66,6 @@ function divInputValue(valorInput) {
   return novaDiv;
 }
 
-const nome = document.querySelector('#input-name').value;
-const sobrenome = document.querySelector('#input-lastname').value;
-const email = document.querySelector('#input-email').value;
-const casa = document.querySelector('#house').value;
-const familia = document.querySelector('input[name="family"]:checked').value;
-const materias = subjectChecked();
-const avaliacao = document.querySelector('input[name="rate"]:checked').value;
-const observaçao = textarea.value;
 const form = document.querySelector('#evaluation-form');
 const etiquetaNome = 'Nome: ';
 const etiquetaEmail = 'Email: ';
@@ -85,6 +77,14 @@ const etiquetaObservacoes = 'Observações: ';
 const espaco = ' ';
 
 function funçaoFinal() {
+  const nome = document.querySelector('#input-name').value;
+  const sobrenome = document.querySelector('#input-lastname').value;
+  const email = document.querySelector('#input-email').value;
+  const casa = document.querySelector('#house').value;
+  const familia = document.querySelector('input[name="family"]:checked').value;
+  const materias = subjectChecked();
+  const avaliacao = document.querySelector('input[name="rate"]:checked').value;
+  const observaçao = textarea.value;
   form.innerHTML = '';
   form.appendChild(divInputValue(etiquetaNome + nome + espaco + sobrenome));
   form.appendChild(divInputValue(etiquetaEmail + email));
