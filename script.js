@@ -52,7 +52,7 @@ const subjectArray = [];
 
 function subjectChecked() {
   const subject = document.querySelectorAll('input[name="subject"]');
-  for (let index of subject) {
+  for (const index of subject) {
     if (index.checked === true) {
       subjectArray.push(index.value);
     }
@@ -66,24 +66,33 @@ function divInputValue(valorInput) {
   return novaDiv;
 }
 
+const nome = document.querySelector('#input-name').value;
+const sobrenome = document.querySelector('#input-lastname').value;
+const email = document.querySelector('#input-email').value;
+const casa = document.querySelector('#house').value;
+const familia = document.querySelector('input[name="family"]:checked').value;
+const materias = subjectChecked();
+const avaliacao = document.querySelector('input[name="rate"]:checked').value;
+const observaçao = textarea.value;
+const form = document.querySelector('#evaluation-form');
+const etiquetaNome = 'Nome: ';
+const etiquetaEmail = 'Email: ';
+const etiquetaCasa = 'Casa: ';
+const etiquetaFamilia = 'Família: ';
+const etiquetaMaterias = 'Matérias: ';
+const etiquetaAvaliacoes = 'Avaliação: ';
+const etiquetaObservacoes = 'Observações: ';
+const espaco = ' ';
+
 function funçaoFinal() {
-  const nome = document.querySelector('#input-name').value;
-  const sobrenome = document.querySelector('#input-lastname').value;
-  const email = document.querySelector("#input-email").value;
-  const casa = document.querySelector('#house').value;
-  const familia = document.querySelector('input[name="family"]:checked').value;
-  const materias = subjectChecked();
-  const avaliacao = document.querySelector('input[name="rate"]:checked').value;
-  const observaçao = textarea.value;
-  const form = document.querySelector('#evaluation-form');
   form.innerHTML = '';
-  form.appendChild(divInputValue('Nome: ' + nome + ' ' + sobrenome));
-  form.appendChild(divInputValue('Email: ' + email));
-  form.appendChild(divInputValue('Casa: ' + casa));
-  form.appendChild(divInputValue('Família: ' + familia));
-  form.appendChild(divInputValue('Matérias: ' + materias));
-  form.appendChild(divInputValue('Avaliação: ' + avaliacao));
-  form.appendChild(divInputValue('Observações: ' + observaçao));
+  form.appendChild(divInputValue(etiquetaNome + nome + espaco + sobrenome));
+  form.appendChild(divInputValue(etiquetaEmail + email));
+  form.appendChild(divInputValue(etiquetaCasa + casa));
+  form.appendChild(divInputValue(etiquetaFamilia + familia));
+  form.appendChild(divInputValue(etiquetaMaterias + materias));
+  form.appendChild(divInputValue(etiquetaAvaliacoes + avaliacao));
+  form.appendChild(divInputValue(etiquetaObservacoes + observaçao));
 }
 
-buttonForm.addEventListener('click', funçaoFinal)
+buttonForm.addEventListener('click', funçaoFinal);
