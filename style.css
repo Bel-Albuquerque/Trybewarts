@@ -40,3 +40,6 @@ main {
 #input-radio-buttons {
   display: flex;
 }
+.botaoEnviar {
+  color: purple;
+}
