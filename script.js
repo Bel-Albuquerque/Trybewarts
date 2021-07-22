@@ -60,39 +60,20 @@ function subjectChecked() {
   return subjectArray.join(', ');
 }
 
-function divInputValue(valorInput) {
-  const novaDiv = document.createElement('div');
-  novaDiv.innerHTML = valorInput;
-  return novaDiv;
-}
-
-const form = document.querySelector('#evaluation-form');
-const etiquetaNome = 'Nome: ';
-const etiquetaEmail = 'Email: ';
-const etiquetaCasa = 'Casa: ';
-const etiquetaFamilia = 'Família: ';
-const etiquetaMaterias = 'Matérias: ';
-const etiquetaAvaliacoes = 'Avaliação: ';
-const etiquetaObservacoes = 'Observações: ';
-const espaco = ' ';
-
 function funçaoFinal() {
+  const materias = subjectChecked();
   const nome = document.querySelector('#input-name').value;
   const sobrenome = document.querySelector('#input-lastname').value;
   const email = document.querySelector('#input-email').value;
   const casa = document.querySelector('#house').value;
   const familia = document.querySelector('input[name="family"]:checked').value;
-  const materias = subjectChecked();
   const avaliacao = document.querySelector('input[name="rate"]:checked').value;
   const observaçao = textarea.value;
-  form.innerHTML = '';
-  form.appendChild(divInputValue(etiquetaNome + nome + espaco + sobrenome));
-  form.appendChild(divInputValue(etiquetaEmail + email));
-  form.appendChild(divInputValue(etiquetaCasa + casa));
-  form.appendChild(divInputValue(etiquetaFamilia + familia));
-  form.appendChild(divInputValue(etiquetaMaterias + materias));
-  form.appendChild(divInputValue(etiquetaAvaliacoes + avaliacao));
-  form.appendChild(divInputValue(etiquetaObservacoes + observaçao));
+  const form = document.querySelector('#evaluation-form');
+  const valorInput = `Nome: ${nome} ${sobrenome};<br>Email: ${email};<br>Casa: ${casa};
+  <br>Família: ${familia};<br>Matérias: ${materias};<br>Avaliação: ${avaliacao};
+  <br>Observações: ${observaçao};`;
+  form.innerHTML = valorInput;
 }
 
 buttonForm.addEventListener('click', funçaoFinal);
