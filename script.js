@@ -47,32 +47,60 @@ function contador() {
 
 textarea.addEventListener('input', contador);
 
-const subjectArray = [];
-
 function subjectChecked() {
-  const subject = document.querySelectorAll('input[name="subject"]');
+  const subjectArray = [];
+  const subject = document.querySelectorAll('input[class=subject]');
   for (let index = 0; index < subject.length; index += 1) {
-    if (subject[index].checked === true) {
+    if (subject[index].checked) {
       subjectArray.push(subject[index].value);
     }
   }
-  return subjectArray.join(', ');
+  return `Matérias: ${subjectArray.join(', ')}`;
+}
+
+function nomeCompleto() {
+  const nome = document.querySelector('#input-name').value;
+  const sobrenome = document.querySelector('#input-lastname').value;
+  return `Nome: ${nome} ${sobrenome}`;
+}
+
+function eMail() {
+  const email = document.querySelector('#input-email').value;
+  return `Email: ${email}`;
+}
+
+function casa() {
+  const casas = document.querySelector('#house').value;
+  return `Casa: ${casas}`;
+}
+
+function familia() {
+  const familias = document.querySelector('input[name=family]:checked').value;
+  return `Família: ${familias}`;
+}
+
+function avaliacao() {
+  const avaliaçao = document.querySelector('input[name=rate]:checked').value;
+  return `Avaliação: ${avaliaçao}`;
+}
+
+function observacao() {
+  const observaçao = textarea.value;
+  return `Observações: ${observaçao}`;
 }
 
 function funçaoFinal() {
-  const materias = subjectChecked();
-  const nome = document.querySelector('#input-name').value;
-  const sobrenome = document.querySelector('#input-lastname').value;
-  const email = document.querySelector('#input-email').value;
-  const casa = document.querySelector('#house').value;
-  const familia = document.querySelector('input[name="family"]:checked').value;
-  const avaliacao = document.querySelector('input[name="rate"]:checked').value;
-  const observaçao = textarea.value;
   const form = document.querySelector('#evaluation-form');
-  const valorInput = `Nome: ${nome} ${sobrenome};<br>Email: ${email};<br>Casa: ${casa};
-  <br>Família: ${familia};<br>Matérias: ${materias};<br>Avaliação: ${avaliacao};
-  <br>Observações: ${observaçao};`;
-  form.innerHTML = valorInput;
+
+  const valInput = `${nomeCompleto()};<br>
+  ${eMail()};
+  <br>${casa()};
+  <br>${familia()};
+  <br>${subjectChecked()};
+  <br>${avaliacao()};
+  <br>${observacao()};`;
+
+  form.innerHTML = valInput;
 }
 
 buttonForm.addEventListener('click', funçaoFinal);
